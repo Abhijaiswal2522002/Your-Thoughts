@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import { User } from 'next-auth';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '../auth/[...nextauth]/options';
+export const dynamic = 'force-dynamic'; // 👈 This prevents static optimization
 
 export async function GET(request: Request) {
   await dbConnect();
